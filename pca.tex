@@ -1,0 +1,58 @@
+		\begin{frame}{principal component analysis}{introduction}
+            \begin{itemize}
+                \item   \textbf{objective}
+                    \begin{itemize}
+                        \item   map features to new coordinate system
+                            \begin{equation*}\label{eq:pca_an}
+                                \vec{u}(n) = \mat{T}^\mathrm{T}\cdot\vec{v}(n) 
+                            \end{equation*}
+                            \begin{itemize}
+                                \item   $\vec{u}(n)$: transformed features (same dimension as input $\vec{v}(n)$)
+                                \item   $\mat{T}$: transformation matrix ($\mathcal{F}_v\times\mathcal{F}_v$)	
+                                    \begin{equation*}
+                                        \mat{T} =   \left[ 
+                                                        \begin{array}{cccc}
+                                                        \vec{c}_0 & \vec{c}_1 & \ldots & \vec{c}_{\mathcal{F}-1}\\
+                                                        \end{array}  
+                                                    \right] 
+                                    \end{equation*}
+                            \end{itemize}
+                    \end{itemize}
+                \item<2->   \textbf{properties}
+                    \begin{itemize}
+                        \item	$\vec{c}_0$ points in the direction of  highest \emph{variance} (sorted by eigenvalue)
+                        \item<2->	variance concentrated in as few output components as possible
+                        \item<2->	$\vec{c}_i$ orthogonal
+                                \begin{equation*}
+                                    \vec{c}_i^\mathrm{T}\cdot \vec{c}_j = 0\quad \forall\enspace i \neq j
+                                \end{equation*}
+                        \item<2->	transformation is invertible
+                                \begin{equation*}\label{eq:pca_syn}
+                                    \vec{v}(n) = \mat{T}\cdot\vec{u}(n)
+                                \end{equation*}
+                    \end{itemize}
+            \end{itemize}
+		\end{frame}
+		\begin{frame}{feature space transformation}{PCA visualization}
+			\vspace{-3mm}
+			\figwithmatlab{Pca}
+			
+			\vspace{-5mm}
+			\pause
+			calculation of the transformation matrix
+			\begin{enumerate}
+                \item normalize input data
+				\item	compute covariance matrix $\mat{R}$
+                    \begin{equation*}
+						\mat{R} = \mathcal{E}\lbrace(V-\mathcal{E}\lbrace V\rbrace)(V-\mathcal{E}\lbrace V\rbrace)\rbrace%\frac{1}{\mathcal{F}-1}\cdot \left(\vec{v} - \vec{\mu}_v\right)\left(\vec{v}^\mathrm{T} - \vec{\mu}^\mathrm{T}_v\right)
+					\end{equation*}
+				\item	compute eigenvectors and eigenvalues
+				\item	sort eigenvectors by eigenvalue and use as axes for the new coordinate system
+                \item   apply transformation matrix
+			\end{enumerate}
+		\end{frame}
+		\begin{frame}{feature space transformation}{PCA visualization}
+		\end{frame}
+
+     
+        

@@ -1,0 +1,33 @@
+% move all configuration stuff into includes file so we can focus on the content
+\input{include}
+
+\title{Principal Component Analysis}
+\subtitle{an introduction} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+    % generate title page
+	\input{include/titlepage}
+
+    \section[about]{about me}
+        \input{about}
+        
+    \section[intro]{introduction}
+        \input{intro}
+        
+    \section[pca]{principal component analysis}
+        \input{pca}
+        
+    \section[examples]{pca real world examples}
+        \input{pca_examples}
+
+    \section{conclusion}
+        \input{conclusion}
+        \input{./include/contact}
+
+    %\begin{frame}[allowframebreaks]{references}{references}
+        %\printbibliography[title=references]
+    %\end{frame}
+
+\end{document}
+
