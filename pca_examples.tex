@@ -1,34 +1,61 @@
-\begin{frame}{PCA examples}{example 1}
+%\begin{frame}{PCA examples}{example 1}
+    %\begin{columns}
+    %\column{.5\linewidth}
+        %\begin{itemize}
+            %\item 4-dimensional feature space: Spectral Centroid, RMS, Zero Crossing, Spectral Rolloff
+            %\item 10 classes of music signals (classical, jazz, blues, metal, ...)
+        %\end{itemize}
+    %\column{.4\linewidth}
+        %\figwithmatlab{FeatureScatter}
+    %\end{columns}
+%\end{frame}
+
+\begin{frame}{PCA examples}{example 1: scatter and classification}
+		\vspace{-8mm}
     \begin{columns}
     \column{.5\linewidth}
         \begin{itemize}
-            \item 4-dimensional feature space: Spectral Centroid, RMS, Zero Crossing, Spectral Rolloff
-            \item 10 classes of music signals (classical, jazz, blues, metal, ...)
+            \item 4-dimensional feature space: 
+							\begin{itemize}
+									\item	Spectral Centroid $\mu_\mathrm{SC}$
+									\item RMS $\mu_\mathrm{RMS}$
+									\item Zero Crossing $\mu_\mathrm{ZC}$
+									\item Spectral Rolloff $\mu_\mathrm{SR}$
+							\end{itemize}
+						\smallskip
+            \item 10 classes of music signals 
+							\begin{itemize}
+								\item blues
+								\item classical
+								\item country
+								\item disco
+								\item hiphop
+								\item jazz
+								\item metal
+								\item	pop
+								\item reggae
+								\item rock
+							\end{itemize}
         \end{itemize}
-    \column{.4\linewidth}
-        \figwithmatlab{FeatureScatter}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{PCA examples}{example 1}
-    \begin{columns}
     \column{.5\linewidth}
-        \begin{itemize}
-            \item 4-dimensional feature space: Spectral Centroid, RMS, Zero Crossing, Spectral Rolloff
-            \item 10 classes of music signals (classical, jazz, blues, metal, ...)
-        \end{itemize}
-    \column{.4\linewidth}
-        \vspace{-5mm}
-        \figwithmatlab{FeatureScatterPca}
+        \only<1>{\figwithmatlab{FeatureScatter}}
+        \only<2>{\vspace{-4mm}\figwithmatlab{FeatureScatterPca}}
     \end{columns}
 \end{frame}
 
-\begin{frame}{PCA examples}{example 1}
+\begin{frame}{PCA examples}{example 1: scatter and classification}
+		\vspace{-5mm}
     \begin{columns}
     \column{.5\linewidth}
         
         \begin{itemize}
-            \item \textbf{observations}
+            \item \textbf{experiment: feature/pc classification performance}
+							\begin{itemize}
+								\item individual 
+								\item cumulative 
+							\end{itemize}
+            \bigskip
+						\item<2-> \textbf{observations}
             \begin{itemize}
                 \item   combined feature performance is not sum of individual performance
                 \item   variance/eigenvalue ranking does not necessarily correlate to task performance
@@ -41,7 +68,7 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{PCA examples}{example 2}
+\begin{frame}{PCA examples}{example 2: feature analysis}
     \textbf{PCA transformation matrix $\mathbf{T}^\mathrm{T}$}
     \only<1>
     {
@@ -68,6 +95,11 @@
 %0.3802 &   \textcolor{highlight}{0.5599}  & -0.0381  &  0.2808 &   \textcolor{highlight}{0.6622} &   0.1524\\
 %0.3679 &   \textcolor{highlight}{0.6245}  &  0.0956  & -0.4071 &  \textcolor{highlight}{-0.5267} &  -0.1495\nonumber
                      \end{array}  
-            \right]         \end{equation}   }
+            \right]         \end{equation}   
+						}
+						\begin{figure}%
+						\includegraphics[width=.3
+						\columnwidth]{transformation_matrix}%
+						\end{figure}
     
 \end{frame}
