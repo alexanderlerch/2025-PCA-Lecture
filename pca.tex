@@ -1,14 +1,14 @@
 
-\begin{frame}{principal component analysis}{introduction}
-    \begin{itemize}
-        \item   linear transformation
-        \item   resulting principal components are 
-					\begin{itemize}
-						\item uncorrelated
-						\item	sorted (by variance)
-					\end{itemize}
-    \end{itemize}
-\end{frame}
+%\begin{frame}{principal component analysis}{introduction}
+    %\begin{itemize}
+        %\item   linear transformation
+        %\item   resulting principal components are 
+					%\begin{itemize}
+						%\item uncorrelated
+						%\item	sorted (by variance)
+					%\end{itemize}
+    %\end{itemize}
+%\end{frame}
 
 \begin{frame}{principal component analysis}{introduction}
 				\begin{itemize}
@@ -47,22 +47,35 @@
 \end{frame}
 
 \begin{frame}{principal component analysis}{calculation}
-	\vspace{-3mm}
-	\figwithmatlab{Pca}
-	
-	\vspace{-5mm}
-	\pause
-	calculation of the transformation matrix
-	\begin{enumerate}
-						\item normalize input data
-		\item	compute covariance matrix $\mat{R}$
-								\begin{equation*}
-				\mat{R} = \mathcal{E}\lbrace(V-\mathcal{E}\lbrace V\rbrace)(V-\mathcal{E}\lbrace V\rbrace)\rbrace%\frac{1}{\mathcal{F}-1}\cdot \left(\vec{v} - \vec{\mu}_v\right)\left(\vec{v}^\mathrm{T} - \vec{\mu}^\mathrm{T}_v\right)
-			\end{equation*}
-		\item	compute eigenvectors and eigenvalues
-		\item	sort eigenvectors by eigenvalue and use as axes for the new coordinate system
-						\item   (remove irrelevant components and) apply transformation matrix
-	\end{enumerate}
+	%\vspace{-4mm}
+	\begin{columns}
+	\column{.5\linewidth}
+		\textbf{calculation} of the transformation matrix
+		\begin{enumerate}
+							\item normalize input data
+			\item	compute covariance matrix $\mat{R}$
+									\begin{equation*}
+					\mat{R} = \mathcal{E}\lbrace(V-\mathcal{E}\lbrace V\rbrace)(V-\mathcal{E}\lbrace V\rbrace)\rbrace%\frac{1}{\mathcal{F}-1}\cdot \left(\vec{v} - \vec{\mu}_v\right)\left(\vec{v}^\mathrm{T} - \vec{\mu}^\mathrm{T}_v\right)
+				\end{equation*}
+			\item	compute eigenvectors and eigenvalues
+			\item	sort eigenvectors by eigenvalue and use as axes for the new coordinate system
+							\item   (remove irrelevant components and) apply transformation matrix
+		\end{enumerate}
+	\column{.5\linewidth}
+		\figwithmatlab{Pca}
+		
+		\visible<2->{
+		\textbf{properties}:
+		\begin{itemize}
+				\item linear transformation
+        \item   resulting principal components are 
+					\begin{itemize}
+						\item uncorrelated
+						\item	sorted (by variance)
+					\end{itemize}
+    \end{itemize}
+		}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{principal component analysis}{drawbacks}
